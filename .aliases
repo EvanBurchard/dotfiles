@@ -1,0 +1,35 @@
+alias v='vim .'
+alias g='git status'
+alias ga='git add -A; git add -u; git add -A'
+alias gc='git commit -m'
+alias gp='git push'
+#alias jp='ga;gc 'just pushing' & p
+# alias .='pwd'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+
+
+# start mongo
+alias mongo_start='mongod --fork'
+alias mongo_stop='killall mongod'
+
+# use homebrew's ctags
+alias ctags="`brew --prefix`/bin/ctags"
+alias tag="ctags -R --exclude=node_modules --exclude=.git --exclude=log *"
+
+alias vimrc='vim ~/.vimrc.after'
+alias org='emacs ~/todo.org'
+
+alias bi='bundle install'
+alias be='bundle exec'
+#alias tags='ctags -e -R .'
+alias psql-start='postgres -D /usr/local/var/postgresql &'
+
+alias branches='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort'
+
+alias gipuush='git push -u origin `git symbolic-ref HEAD | cut -d/ -f3-`'
+
+alias python='python3.6'
+alias pip='pip3.6'
