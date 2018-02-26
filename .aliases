@@ -33,3 +33,4 @@ alias gipuush='git push -u origin `git symbolic-ref HEAD | cut -d/ -f3-`'
 
 alias python='python3.6'
 alias pip='pip3.6'
+alias quit='pkill -u evan'
