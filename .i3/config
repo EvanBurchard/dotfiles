@@ -124,3 +124,6 @@ exec xinput --set-prop 10 288 1.0
 exec xinput --set-prop 10 294 0 1
 
 exec export TERM="/usr/bin/gnome-terminal"
+
+# Faster keyboard response
+exec xset r rate 240 30
