@@ -1,0 +1,63 @@
+" Remap leader
+let mapleader = ","
+" This particular thing has to be done in .vimrc.before
+" Or the plugins (eg. nerd commenter) will be wrong
+" Also done here... something goes weird if this is sourced
+" seperately maybe? Not sure.
+
+" Use system clipboard (linux)
+set clipboard=unnamedplus
+
+" Toggle open NerdTree
+map <C-n> :NERDTreeToggle<CR>
+
+" go to alternate (last open) file
+nnoremap <leader><leader> <C-^>
+
+" Should comment things
+nmap <Space> <leader>ci
+vmap <Space> <leader>ci
+
+" Open recent files
+map ff :BuffergatorToggle<CR>
+
+" Sort files by most recently used
+let g:buffergator_sort_regime = 'mru'
+
+" Find recent file
+nmap <leader>f :CtrlPMRU<CR>
+
+" Don't cram the cursor at the bottom
+set scrolloff=3
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" Indent baded on filetype (?)
+filetype plugin indent on
+
+" 'Emacs style' tab completion when selecting files, etc. (?)
+set wildmode=longest,list
+
+" make tab completion for files/buffers act like bash
+set wildmenu
+
+" Move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+" Clear search
+map <c-m> :nohlsearch<CR>
+
+" current directory stuff
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+" The good emacs navigation (might need more of this)
+imap <C-a> <c-[>0i
+imap <C-e> <c-[>A
+
+
